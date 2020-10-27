@@ -2,6 +2,36 @@
     <div class="col-sm-12 topo">
         <p>agendar works!</p>
 
-    </div>
 
+
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+            <div class="24hr-example">
+                <input placeholder="24hr format" 
+                class="ajustes"
+                formControlName="horario"
+                aria-label="24hr format" [ngxTimepicker]="fullTime" [format]="24"  readonly>
+                <ngx-material-timepicker #fullTime></ngx-material-timepicker>
+              </div>
+            
+            <mat-form-field>
+                <div>
+                  <input matInput placeholder="native" value="value">
+                </div>
+              
+              </mat-form-field>
+
+            <label>
+              First Name:
+              <input type="text">
+            </label>
+          
+            <label>
+              Last Name:
+              <input type="text" formControlName="lastName">
+            </label>
+            <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+          </form>
+
+    </div>
 </div>

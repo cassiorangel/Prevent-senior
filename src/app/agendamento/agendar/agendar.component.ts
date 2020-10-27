@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-agendar',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgendarComponent implements OnInit {
 
-  constructor() { }
+  profileForm = this.fb.group({
+    horario: [null],
+    lastName: [null]
+  });
+
+  constructor(
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit(): void {
+  }
+  onSubmit() {
+    console.log(this.profileForm.value)
   }
 
 }
