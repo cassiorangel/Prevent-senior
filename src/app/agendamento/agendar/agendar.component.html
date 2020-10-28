@@ -1,37 +1,31 @@
 <div class="row">
-    <div class="col-sm-12 topo">
-        <p>agendar works!</p>
+  <div class="col-sm-12 topo">
+
+    <p class="agenda">Agenda
+    </p>
 
 
 
-        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <div class="exemple">
+          <input placeholder="24hr format" class="ajustes" formControlName="horario" aria-label="24hr format"
+            [ngxTimepicker]="fullTime" [format]="24" readonly>
+          <ngx-material-timepicker #fullTime></ngx-material-timepicker>
+        </div>
 
-            <div class="24hr-example">
-                <input placeholder="24hr format" 
-                class="ajustes"
-                formControlName="horario"
-                aria-label="24hr format" [ngxTimepicker]="fullTime" [format]="24"  readonly>
-                <ngx-material-timepicker #fullTime></ngx-material-timepicker>
-              </div>
-            
-            <mat-form-field>
-                <div>
-                  <input matInput placeholder="native" value="value">
-                </div>
-              
-              </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Mensagem</mat-label>
+          <input matInput placeholder="Sua mensagem">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
 
-            <label>
-              First Name:
-              <input type="text">
-            </label>
-          
-            <label>
-              Last Name:
-              <input type="text" formControlName="lastName">
-            </label>
-            <button type="submit" [disabled]="!profileForm.valid">Submit</button>
-          </form>
+        <div class="bt-topo">
+          <button class="btn-s btn-outline-succes my-2 my-sm-0" type="submit">Gravar</button>
+        </div>
+      </div>
+    </form>
 
-    </div>
+  </div>
 </div>
