@@ -4,9 +4,7 @@
     <p class="agenda">Agenda
     </p>
 
-
-
-    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="profileForm" (ngSubmit)="upload()">
       <div class="form-row">
         <div class="exemple">
           <input placeholder="24hr format" class="ajustes" formControlName="horario" aria-label="24hr format"
@@ -20,6 +18,12 @@
           <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
           <mat-hint>Hint</mat-hint>
         </mat-form-field>
+        <label class="custom-file-upload">
+        <input type="file" style="display: inline-block;" class="inputfile" (change)="incomingfile($event)" placeholder="Upload file"
+          accept=".xlsx">
+
+          
+        </label>
 
         <div class="bt-topo">
           <button class="btn-s btn-outline-succes my-2 my-sm-0" type="submit">Gravar</button>
