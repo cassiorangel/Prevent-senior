@@ -22,7 +22,7 @@
         <input type="file" style="display: inline-block;" class="inputfile" (change)="incomingfile($event)" placeholder="Upload file"
           accept=".xlsx">
 
-          
+
         </label>
 
         <div class="bt-topo">
@@ -31,5 +31,18 @@
       </div>
     </form>
 
+
+
+    <br>
+    <br>
+    <table>
+      <tbody>
+        <tr *ngFor="let row of data">
+          <td *ngFor="let val of row">
+            {{val}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
