@@ -21,8 +21,8 @@ export class AgendarComponent implements OnInit {
   file: File;
 
   profileForm = this.fb.group({
-    horario: [null],
-    lastName: [null]
+    horario: [''],
+    message: [''],
   });
 
   constructor(
@@ -30,10 +30,6 @@ export class AgendarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-  }
-
-  onSubmit() {
-    console.log(this.profileForm.value)
   }
 
   incomingfile(evt: any) {
@@ -58,6 +54,6 @@ export class AgendarComponent implements OnInit {
   }
 
   upload() {
-//    XLSX.set_cptable(cpexcel);
+    console.log(this.profileForm.value)
   }
 }

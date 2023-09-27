@@ -1,45 +1,75 @@
 <div class="row">
   <div class="col-sm-12 topo">
-
-    <p class="agenda">Agenda
-    </p>
+    <p class="agenda">Agenda</p>
 
     <form [formGroup]="profileForm" (ngSubmit)="upload()">
       <div class="form-row">
         <div class="exemple">
-          <input placeholder="24hr format" class="ajustes" formControlName="horario" aria-label="24hr format"
-            [ngxTimepicker]="fullTime" [format]="24" readonly>
+          <input
+            placeholder="24hr format"
+            class="ajustes"
+            formControlName="horario"
+            aria-label="24hr format"
+            [ngxTimepicker]="fullTime"
+            [format]="24"
+            readonly
+          />
           <ngx-material-timepicker #fullTime></ngx-material-timepicker>
         </div>
 
         <mat-form-field appearance="outline">
           <mat-label>Mensagem</mat-label>
-          <input matInput placeholder="Sua mensagem">
+          <input
+            matInput
+            placeholder="Sua mensagem"
+            formControlName="message"
+          />
           <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
           <mat-hint>Hint</mat-hint>
         </mat-form-field>
         <label class="custom-file-upload">
-        <input type="file" style="display: inline-block;" class="inputfile" (change)="incomingfile($event)" placeholder="Upload file"
-          accept=".xlsx">
-
-
+          <input
+            type="file"
+            style="display: inline-block"
+            class="inputfile"
+            (change)="incomingfile($event)"
+            placeholder="Upload file"
+            accept=".xlsx"
+          />
         </label>
 
         <div class="bt-topo">
-          <button class="btn-s btn-outline-succes my-2 my-sm-0" type="submit">Gravar</button>
+          <button class="btn-s btn-outline-succes my-2 my-sm-0" type="submit">
+            Gravar
+          </button>
         </div>
       </div>
     </form>
 
+    <table class="table app-tb">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+      </tbody>
+    </table>
 
-
-    <br>
-    <br>
     <table>
       <tbody>
         <tr *ngFor="let row of data">
           <td *ngFor="let val of row">
-            {{val}}
+            {{ val }}
           </td>
         </tr>
       </tbody>
